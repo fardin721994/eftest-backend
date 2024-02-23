@@ -54,7 +54,10 @@ mongoose
   .then(() => {
     // app.listen(process.env.PORT || 5000);
     // app.listen(5000);
-    app.listen(5000, "0.0.0.0", () => console.log("connected to port 5000"));
+    // app.listen(5000, "0.0.0.0", () => console.log("connected to port 5000"));
+    app.listen(process.env.PORT || 5000, () =>
+      console.log("connected to port 5000")
+    );
   })
   .catch((err) => {
     console.log("Mongo DB Error: \n", err);
