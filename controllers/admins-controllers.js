@@ -57,7 +57,7 @@ const login = async (req, res, next) => {
     token = jwt.sign(
       { adminId: existingAdmin.id, email: existingAdmin.email },
       "supersecret_dont_share",
-      { expiresIn: "1h" }
+      { expiresIn: "60d" }
     );
   } catch (err) {
     const error = new HttpError(
